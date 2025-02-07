@@ -36,7 +36,8 @@ function login() {
         if (parseInt(res)) {
             $.get("api/chk_pw.php", {
                 acc: $("#acc").val(),
-                pw: $("#pw").val()
+                pw: $("#pw").val(),
+                table: "Mem"
             }, function(res) {
                 //console.log(res)
                 if (parseInt(res)) {

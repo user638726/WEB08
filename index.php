@@ -8,17 +8,18 @@
 
     <title>┌精品電子商務網站」</title>
     <link href="./css/css.css" rel="stylesheet" type="text/css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/js.js"></script>
 </head>
 
 <body>
-    <iframe name="back" style="display:none;"></iframe>
+
     <div id="main">
         <div id="top">
             <a href="?">
                 <img src="./icon/0416.jpg" style="width:500px">
             </a>
-            <div style="padding:10px;display:inline-block;vertical-align:top">
+            <div style="padding:10px;display:inline-block;vertical-align:top;">
                 <a href="?">回首頁</a> |
                 <a href="?do=news">最新消息</a> |
                 <a href="?do=look">購物流程</a> |
@@ -26,10 +27,14 @@
                 <a href="?do=login">會員登入</a> |
                 <a href="?do=admin">管理登入</a>
             </div>
-            情人節特惠活動 &nbsp; 為了慶祝七夕情人節，將舉辦情人兩人到現場有七七折之特惠活動~
+
+
         </div>
+
         <div id="left" class="ct">
             <div style="min-height:400px;">
+
+
             </div>
             <span>
                 <div>進站總人數</div>
@@ -38,6 +43,17 @@
             </span>
         </div>
         <div id="right">
+            <?php 
+        $do=$_GET['do']??'main';
+        $file="front/".$do.".php";
+        if(file_exists($file)){
+            include $file;
+        }else{
+            include "front/main.php";
+        }
+
+
+        ?>
         </div>
         <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
             頁尾版權 : </div>

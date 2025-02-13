@@ -54,7 +54,7 @@ function save($array){
         $values=join("','",$array);
         $sql="insert into $this->table (`{$keys}`) values('{$values }')";
     }
-   // echo $sql;
+
     return $this->pdo->exec($sql);
 
 }
@@ -67,7 +67,7 @@ function del($array){
         $sql .= " where `id`='$array'";
     }
 
-    return $this->exec($sql);
+    return $this->pdo->exec($sql);
 }
 function count(...$arg){
     $sql="select count(*) from $this->table ";
@@ -81,7 +81,7 @@ function count(...$arg){
     if(!empty($arg[1])){
         $sql .= $arg[1];
     }
-    // echo "$sql";
+   // echo $sql;
     return $this->pdo->query($sql)->fetchColumn();
 }
 
